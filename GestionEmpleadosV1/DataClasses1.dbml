@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AdministracionEmpleados" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.0.3;Initial Catalog=AdministracionEmpleados;Integrated Security=True" SettingsObjectName="GestionEmpleadosV1.Properties.Settings" SettingsPropertyName="AdministracionEmpleadosConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Empleado" Member="Empleado">
+    <Type Name="Empleado">
+      <Column Name="IDEmpleado" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Apellido" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Nacionalidad" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="NivelEducativo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FechaNacimiento" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Celular" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Correo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Genero" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="EstadoCivil" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Profesion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="RFC" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FechaIngreso" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FechaRetiro" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FormaPago" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Area" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Salario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EstadoTrabajador" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Turno" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Cargo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Dias" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="InicioJornada" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FinJornada" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Nota" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.existeEmpleado" Method="existeEmpleado">
+    <Parameter Name="IDEmpleado" Parameter="iDEmpleado" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.proc_actualizarDatosGenerales" Method="proc_actualizarDatosGenerales">
+    <Parameter Name="IDEmpleado" Parameter="iDEmpleado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="Apellido" Parameter="apellido" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="Nacionalidad" Parameter="nacionalidad" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="NivelEducativo" Parameter="nivelEducativo" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="FechaNacimiento" Parameter="fechaNacimiento" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="Celular" Parameter="celular" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="Telefono" Parameter="telefono" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="Genero" Parameter="genero" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="EstadoCivil" Parameter="estadoCivil" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="Profesion" Parameter="profesion" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="Direccion" Parameter="direccion" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="RFC" Parameter="rFC" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="Nota" Parameter="nota" Type="System.String" DbType="VarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.proc_actualizarDatosHorarios" Method="proc_actualizarDatosHorarios">
+    <Parameter Name="IDEmpleado" Parameter="iDEmpleado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Dias" Parameter="dias" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="InicioJornada" Parameter="inicioJornada" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="FinJornada" Parameter="finJornada" Type="System.String" DbType="VarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.proc_actualizarDatosLaborales" Method="proc_actualizarDatosLaborales">
+    <Parameter Name="IDEmpleado" Parameter="iDEmpleado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FechaIngreso" Parameter="fechaIngreso" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="FechaRetiro" Parameter="fechaRetiro" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="FormaPago" Parameter="formaPago" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="Area" Parameter="area" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="Salario" Parameter="salario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EstadoTrabajador" Parameter="estadoTrabajador" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="Turno" Parameter="turno" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="Cargo" Parameter="cargo" Type="System.String" DbType="VarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.proc_consultarDatos" Method="proc_consultarDatos">
+    <ElementType Name="proc_consultarDatosResult">
+      <Column Name="IDEmpleado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Apellido" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Nacionalidad" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="NivelEducativo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FechaNacimiento" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Celular" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Correo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Genero" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="EstadoCivil" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Profesion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="RFC" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FechaIngreso" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FechaRetiro" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FormaPago" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Area" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Salario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EstadoTrabajador" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Turno" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Cargo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Dias" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="InicioJornada" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FinJornada" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Nota" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.proc_consultarDatosDesc" Method="proc_consultarDatosDesc">
+    <ElementType Name="proc_consultarDatosDescResult">
+      <Column Name="IDEmpleado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Apellido" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Nacionalidad" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="NivelEducativo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FechaNacimiento" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Celular" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Correo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Genero" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="EstadoCivil" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Profesion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="RFC" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FechaIngreso" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FechaRetiro" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FormaPago" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Area" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Salario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EstadoTrabajador" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Turno" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Cargo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Dias" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="InicioJornada" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FinJornada" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Nota" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.proc_eliminarEmpleado" Method="proc_eliminarEmpleado">
+    <Parameter Name="IDEmpleado" Parameter="iDEmpleado" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.proc_eliminarTodosEmpleados" Method="proc_eliminarTodosEmpleados">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.proc_insertarNuevoEmpleado" Method="proc_insertarNuevoEmpleado">
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
